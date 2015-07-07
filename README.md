@@ -52,6 +52,17 @@ You can do 3 operations:
 
 Check info panel in Node-RED admin console for detailed documents
 
+This nodes emits following events:
+
+- CREATED
+- PROCESSED
+- INTERRUPTED
+- FAILED
+- ERROR
+
+You can use 'docloud event' node to catch them.
+
+
 ### 'docloud job' node
 
 You can do following operations:
