@@ -40,7 +40,7 @@ You can find your base URL and API key from Developer -> Get your API Key & base
 
 ### 'docloud default config' node
 
-You can define a default config node for all the docloud nodes. If you don't specify a special config for your docloud node, the default one will be used
+You can define a configuaration for each docloud node. If you don't specify a special configuartion for your docloud node, the default one will be used, which is defined in the 'docloud default config' node.
 
 ### 'docloud' node
 
@@ -50,16 +50,21 @@ You can do 3 operations:
 - create
 - submit
 
-#### execute
-
-#### create
-
-#### submit
+Check info panel in Node-RED admin console for detailed documents
 
 ### 'docloud job' node
 
+You can do following operations:
 
-
-
+- list jobs
+- delete jobs
+- get job
+- delete job
+- abort job
+- get job execution status
+- upload attachment
+- download attachment
+- get log items
+- download log
 
 
