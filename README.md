@@ -2,7 +2,7 @@ node-red-contrib-docloud-api
 =====================
 
 
-<a href="http://nodered.org" target="_new">Node-RED</a> nodes to integrate **optimization** into your application.
+<a href="http://nodered.org" target="_new">Node-RED</a> nodes to integrate **optimization service** into your application.
 
 Pre-requisite
 -------------
@@ -28,3 +28,38 @@ Run the following command in the root directory of your Node-RED install.
 
 Usage
 -----
+
+Access <a href="http://www.ibm.com/software/analytics/docloud">IBM Decision Optimization on Cloud</a> service.
+
+### docloud config
+
+You can find your base URL and API key from Developer -> Get your API Key & base URL link
+
+- **url** property: the base URL
+- **key** property: your API Key,
+
+### 'docloud default config' node
+
+You can define a default config node for all the docloud nodes. If you don't specify a special config for your docloud node, the default one will be used
+
+### 'docloud' node
+
+You can do 3 operations:
+
+- execute
+- create
+- submit
+
+#### execute
+
+#### create
+
+#### submit
+
+### 'docloud job' node
+
+
+
+
+
+
