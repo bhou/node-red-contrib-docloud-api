@@ -4,12 +4,15 @@ node-red-contrib-docloud-api
 
 <a href="http://nodered.org" target="_new">Node-RED</a> nodes to integrate **optimization** into your application.
 
-
-
-About IBM Decision Optimization on Cloud
+Pre-requisite
 -------------
 
-<a href="www.ibm.com/software/analytics/docloud">IBM Decision Optimization on Cloud</a> or DOcloud for short is a service 
+To run this you need a subscription on <a href="http://www.ibm.com/software/analytics/docloud">IBM Decision Optimization on Cloud</a>. For details see <a href="http://www.ibm.com/software/analytics/docloud">IBM Decision Optimization on Cloud</a>.
+
+IBM Decision Optimization on Cloud
+-------------
+
+<a href="http://www.ibm.com/software/analytics/docloud">IBM Decision Optimization on Cloud</a> or DOcloud for short is a service 
 that lets you solve CPLEX and OPL problems on the Cloud. You can access the interactive service called DropSolve or you can 
 use the API to integrate the service into your application. Here is a quick introduction with useful links. This module 
 provides a wrapper over the REST API using Promises. The command line client for DOcloud is also a good tool and example 
