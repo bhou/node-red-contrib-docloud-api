@@ -1,0 +1,35 @@
+{
+  "name": "node-red-contrib-docloud-api",
+  "version": "0.0.3",
+  "main": "./index.js",
+  "engines": {
+    "node": "0.12.*"
+  },
+  "repository" :
+  { 
+    "type" : "git", 
+    "url" : "https://github.com/bhou/node-red-contrib-docloud-api.git"
+  },
+  "dependencies": {
+    "architect": "*",
+    "fx-eventbus": "*",
+    "fx-docloud-api": "*",
+    "fx-config": "*"
+  },
+  "keywords": [
+    "node-red", "docloud", "wavelet"
+  ],
+  "plugin": {
+    "consumes": [
+      "docloud",
+      "eventbus"
+    ],
+    "provides": [
+    ]
+  },
+  "node-red": {
+    "nodes": {
+      "docloud": "nodes/docloud.js"
+    }
+  }
+}

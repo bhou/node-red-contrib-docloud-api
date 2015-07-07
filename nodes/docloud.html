@@ -1,0 +1,205 @@
+<script type="text/javascript">
+    RED.nodes.registerType('docloud execute', {
+        category: 'analytics',
+        color: '#C0DEED',
+        defaults: {
+            name: {value: ""},
+            conf: {value: "", type: "docloud config"},
+            operation: {value: "execute"}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "docloud.png",
+        label: function () {
+            return this.name || "docloud " + this.operation;
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="docloud execute">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-conf"><i class="icon-tag"></i> Config</label>
+        <input type="text" id="node-input-conf" placeholder="Configuration">
+    </div>
+    <div class="form-row">
+        <label for="node-input-operation"><i class="icon-tag"></i> Operation</label>
+        <select id="node-input-operation" style="width: 73%">
+            <option value="execute">execute</option>
+            <option value="create">create</option>
+            <option value="submit">submit</option>
+        </select>
+     </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="docloud execute">
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('docloud job', {
+        category: 'analytics',
+        color: '#C0DEED',
+        defaults: {
+            name: {value: ""},
+            conf: {value: "", type: "docloud config"},
+            operation: {value: "getJob"}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "docloud.png",
+        label: function () {
+            return this.name || "docloud job [" + this.operation + "]";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="docloud job">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-conf"><i class="icon-tag"></i> Config</label>
+        <input type="text" id="node-input-conf" placeholder="Configuration">
+    </div>
+    <div class="form-row">
+        <label for="node-input-operation"><i class="icon-tag"></i> Operation</label>
+        <select id="node-input-operation" style="width: 73%">
+            <option value="listJobs">list jobs</option>
+            <option value="deleteJobs">delete jobs</option>
+            <option value="getJob">get job</option>
+            <option value="deleteJob">delete job</option>
+            <option value="abortJob">abort job</option>
+            <option value="getJobExecutionStatus">get job execution status</option>
+            <option value="uploadAttachment">upload attachment</option>
+            <option value="downloadAttachment">download attachment</option>
+            <option value="getLogItems">get log items</option>
+            <option value="downloadLog">download log</option>
+        </select>
+     </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="docloud job">
+</script>
+
+
+<script type="text/javascript">
+    RED.nodes.registerType('docloud event in', {
+        category: 'analytics',
+        color: '#C0DEED',
+        defaults: {
+            name: {value: ""},
+            conf: {value: "", type: "docloud config"},
+            event: {value: "fx-red-docloud.job.error"}
+        },
+        inputs: 0,
+        outputs: 1,
+        icon: "docloud.png",
+        label: function () {
+            return this.name || "docloud event [" + this.event +"]";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="docloud event in">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-conf"><i class="icon-tag"></i> Config</label>
+        <input type="text" id="node-input-conf" placeholder="Configuration">
+    </div>
+    <div class="form-row">
+        <label for="node-input-event"><i class="icon-tag"></i> Event</label>
+        <select id="node-input-event" style="width: 73%">
+            <option value="created">created</option>
+            <option value="processed">processed</option>
+            <option value="interrupted">interrupted</option>
+            <option value="failed">failed</option>
+            <option value="error">error</option>
+        </select>
+     </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="docloud event in">
+</script>
+
+
+
+<script type="text/javascript">
+    RED.nodes.registerType('docloud default config', {
+        category: 'analytics',
+        color: '#C0DEED',
+        defaults: {
+            name: {value: ""},
+            conf: {value: "", type: "docloud config"}
+        },
+        inputs: 0,
+        outputs: 0,
+        icon: "docloud.png",
+        label: function () {
+            return this.name || "docloud default config";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="docloud default config">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-conf"><i class="icon-tag"></i> Config</label>
+        <input type="text" id="node-input-conf" placeholder="Config">
+    </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="docloud default config">
+    <p>docloud default config node</p>
+    <p>No input </p>
+    <p>No ouput </p>
+
+</script>
+
+
+
+
+
+<script type="text/javascript">
+    RED.nodes.registerType('docloud config', {
+        category: 'config',
+        defaults: {
+            name: {value: ""},
+            url: {value: "", require: true}
+        },
+        credentials: {
+            key: {type: "password"}
+        },
+        label: function () {
+            return this.name || 'docloud config';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="docloud config">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-url"><i class="icon-tag"></i> Url</label>
+        <input type="text" id="node-config-input-url" placeholder="Url">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-key"><i class="icon-tag"></i> Key</label>
+        <input type="password" id="node-config-input-key" placeholder="Api Key">
+    </div>
+</script>
